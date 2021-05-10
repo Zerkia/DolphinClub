@@ -2,6 +2,9 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalTime;
 import java.time.LocalDate;
 
+/**
+ * @Nikolaj
+ */
 public class KonkurrenceSvømmer implements Medlem{
   //Personal info
   private String name;
@@ -16,6 +19,19 @@ public class KonkurrenceSvømmer implements Medlem{
   private String event;
   private int placement;
   private LocalTime eventTime;
+
+  public KonkurrenceSvømmer(String name, int age, String discipline, String personalBest,
+                            LocalDate date, String event, int placement, LocalTime eventTime
+                            ) {
+    setName(name);
+    setAge(age);
+    setDiscipline(discipline);
+    setPersonalBest(personalBest);
+    setDate(date);
+    setEvent(event);
+    setPlacement(placement);
+    setEventTime(eventTime);
+  }
 
   public String getName() { return name; }
 
