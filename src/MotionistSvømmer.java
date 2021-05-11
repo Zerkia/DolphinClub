@@ -4,7 +4,7 @@ import java.time.LocalTime;
 /**
  * @Nikolaj
  */
-public class MotionistSvømmer implements Medlem{
+public abstract class MotionistSvømmer implements Medlem{
   //Personal info
   private String name;
   private int age;

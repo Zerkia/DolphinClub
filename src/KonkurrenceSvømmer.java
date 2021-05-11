@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * @Nikolaj
  */
-public class KonkurrenceSvømmer implements Medlem{
+public abstract class KonkurrenceSvømmer implements Medlem{
   //Personal info
   private String name;
   private int age;
