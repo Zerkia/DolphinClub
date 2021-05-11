@@ -1,7 +1,7 @@
-Test
-23
-Senior Svømmer
-Aktiv
-1600
-11-05-2021
+Name = Test
+Age = 23
+Age Group = Senior Svømmer
+Swimming Status = Aktiv
+Price per year = 1600
+Date of creation = 11-05-2021
 
