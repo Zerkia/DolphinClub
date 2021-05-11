@@ -1,8 +1,11 @@
 public interface Medlem {
-	public String toString();
-	public String getName();
-	public int getAge();
-	public void setName();
-	public void setAge();
+	String toString();
 
+	String getName();
+	int getAge();
+	String getTime();
+
+	void setName(String name);
+	void setAge(int age);
+	void setTime(String time);
 }
