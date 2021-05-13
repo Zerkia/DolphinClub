@@ -78,24 +78,47 @@ public class Main {
     System.out.print("Enter your type of Swimmer (Exerciser/Competetive (Motionist/Konkurrence)): ");
     String swimType = scan.nextLine();
 
-    if (swimType.equals("Competetive") || swimType.equals("Konkurrence")){
-      //Spørg om mere
+    if (swimStatus.equals("Active") || swimStatus.equals("Aktiv")){
+      swimStatus = "Aktiv";
+      if (age < 18){
+        String ageGroup = "Junior Svømmer";
+        int price = 1000;
+      } else if (age > 60){
+        String ageGroup = "Senior Svømmer";
+        int price = 1200;
+      } else {
+        String ageGroup = "Senior Svømmer";
+        int price = 1600;
+      }
+    } else {
+      swimStatus = "Passiv";
+      int price = 500;
+      if (age < 18) {
+        String ageGroup = "Junior Svømmer";
+      } else {
+        String ageGroup = "Senior Svømmer";
+      }
+    }
+
+    if (swimType.equals("Competetive") || swimType.equals("Konkurrence")) {
+      // Spørg om mere
       swimStatus = "Aktiv";
       swimType = "Konkurrence";
 
-      System.out.println("Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
+      System.out.println(
+          "Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
       System.out.println("Enter Discipline");
       String discipline = scan.nextLine();
 
-      /**System.out.println("Enter Personal best (lap record) (Minute(s))");
-      int personalBestMinute = scan.nextInt();
-
-      System.out.println("Enter Personal best (lap record) (Second(s))");
-      int personalBestSecond = scan.nextInt();
-
-      String personalBest = personalBestMinute + ":" + personalBestSecond;
-      */
-
+      /**
+       * System.out.println("Enter Personal best (lap record) (Minute(s))"); int
+       * personalBestMinute = scan.nextInt();
+       *
+       * <p>System.out.println("Enter Personal best (lap record) (Second(s))"); int
+       * personalBestSecond = scan.nextInt();
+       *
+       * <p>String personalBest = personalBestMinute + ":" + personalBestSecond;
+       */
       System.out.println("Enter Personal best (lap record)");
       String personalBest = scan.nextLine();
       LocalTime timePersonalBest = LocalTime.parse(personalBest, formatTiming);
@@ -114,44 +137,7 @@ public class Main {
       String eventDate = scan.nextLine();
       LocalDate timeEventDate = LocalDate.parse(eventDate, formatDating);
     }
-
-    //linje 118-150 skal muligvis duplikeres ind i if statementet ovenover -_-
-    /**eller..hvis vi på en måde kan rykke den gruppe tekst ovenover den anden
-     * kan vi evt. lave et lidt nemmere fiks via en enkelt return statement for hver..
-     *bare lige swimStatus der bliver svær er få overført.
-     *
-     */
-    if (swimStatus.equals("Active") || swimStatus.equals("Aktiv")){
-      swimStatus = "Aktiv";
-      if (age < 18){
-        String ageGroup = "Junior Svømmer";
-        int price = 1000;
-
-        return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
-      } else if (age > 60){
-        String ageGroup = "Senior Svømmer";
-        int price = 1200;
-
-        return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
-      } else {
-        String ageGroup = "Senior Svømmer";
-        int price = 1600;
-
-        return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
-      }
-    } else {
-      swimStatus = "Passiv";
-      int price = 500;
-      if (age < 18){
-        String ageGroup = "Junior Svømmer";
-
-        return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
-      } else{
-        String ageGroup = "Senior Svømmer";
-
-        return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
-      }
-    }
+    return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
   }
 
   void run(){
