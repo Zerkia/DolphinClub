@@ -15,12 +15,15 @@ public class Main {
     //fails if motionstSvømmer.txt is empty, if load.size() <= 0 didn't work.
     //maybe a throw needed?
     for (int i = 0; i < load.size(); i+=7) {
-      String fetchName = load.get(i).substring(7);
-      int fetchAge = Integer.parseInt(load.get(i+1).substring(6));
-      String fetchAgeGroup = load.get(i+2).substring(12);
-      String fetchStatus = load.get(i+3).substring(18);
-      int fetchPrice = Integer.parseInt(load.get(i+4).substring(17));
-      String fetchTime = load.get(i+5).substring(19);
+      String fetchName = load.get(i);
+      System.out.println(fetchName);
+      int fetchAge = Integer.parseInt(load.get(i+1));
+      System.out.println(fetchAge);
+      String fetchAgeGroup = load.get(i+2);
+      System.out.println(fetchAgeGroup);
+      String fetchStatus = load.get(i+3);
+      int fetchPrice = Integer.parseInt(load.get(i+4));
+      String fetchTime = load.get(i+5);
 
       exerciseSwimmers.add(new MotionistSvømmer(fetchName, fetchAge, fetchAgeGroup, fetchStatus, fetchPrice, fetchTime));
     }
@@ -112,7 +115,10 @@ public class Main {
   }
 
   void run(){
-    createNewMember();
+    // Vi kan også lave createNewMember void, og så bare smække medlemmet direkte ind i arraylisten
+    // derfra, har du noget du foretrækker?
+    Medlem mads = createNewMember();
+    exerciseSwimmers.add((MotionistSvømmer) mads);
     memberFiles.saveExerciseSwimmer(exerciseSwimmers);
   }
 
