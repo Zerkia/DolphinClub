@@ -65,6 +65,10 @@ public class KonkurrenceSvømmer implements Medlem{
 
   public void setAge(int age) { this.age = age; }
 
+  public void setAgeGroup(String ageGroup) { this.ageGroup = ageGroup; }
+
+  public void setPrice(int price) { this.price = price; }
+
   public void setTime(String time) { this.time = time; }
 
   public void setDiscipline(String discipline) { this.discipline = discipline; }
