@@ -10,10 +10,10 @@ public class KonkurrenceSvømmer implements Medlem{
   private String name;
   private int age;
   private String ageGroup;
+  //Spørg om konkurrence kan være passiv
+  private String status;
   private int price;
   private String time;
-  //Spørg om konkurrence kan være passiv
-  //private String status;
   //KonkurrenceSvømmer info
   private String discipline;
   private String personalBest;
@@ -23,12 +23,14 @@ public class KonkurrenceSvømmer implements Medlem{
   private int placement;
   private String eventTime;
 
-  public KonkurrenceSvømmer(String name, int age, String ageGroup, int price, String time, String discipline,
-                            String personalBest, String date, String event, int placement, String eventTime
+  public KonkurrenceSvømmer(String name, int age, String ageGroup, String status, int price, String time,
+                            String discipline, String personalBest, String date, String event, int placement,
+                            String eventTime
                             ) {
     setName(name);
     setAge(age);
     setAgeGroup(ageGroup);
+    setStatus(status);
     setPrice(price);
     setTime(time);
     setDiscipline(discipline);
@@ -44,6 +46,8 @@ public class KonkurrenceSvømmer implements Medlem{
   public int getAge() { return age; }
 
   public String getAgeGroup() { return ageGroup; }
+
+  public String getStatus() { return status; }
 
   public int getPrice() {return price; }
 
@@ -66,6 +70,8 @@ public class KonkurrenceSvømmer implements Medlem{
   public void setAge(int age) { this.age = age; }
 
   public void setAgeGroup(String ageGroup) { this.ageGroup = ageGroup; }
+
+  public void setStatus(String status) { this.status = status; }
 
   public void setPrice(int price) { this.price = price; }
 

@@ -10,5 +10,26 @@ mads
 Junior Svømmer
 Passiv
 500
-13:05:2021
+13-05-2021
+
+Nikolaj
+23
+Senior Svømmer
+Passiv
+500
+13-05-2021
+
+Nikolaj2
+29
+Senior Svømmer
+Aktiv
+1600
+13-05-2021
+
+jrioea
+234
+Senior Svømmer
+Aktiv
+1200
+13-05-2021
 
