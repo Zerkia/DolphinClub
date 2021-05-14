@@ -50,7 +50,7 @@ public class Main {
       String fetchEventTime = load.get(i+11);
 
       competetiveSwimmers.add(new KonkurrenceSvømmer(
-        fetchName, fetchAge, fetchAgeGroup, fetchPrice, fetchStatus,
+        fetchName, fetchAge, fetchAgeGroup, fetchStatus, fetchPrice,
         fetchTime, fetchDiscipline, fetchPersonalBest, fetchDate,
         fetchEvent, fetchPlacement, fetchEventTime));
     }
@@ -80,6 +80,14 @@ public class Main {
       return 1200;
     }
   }
+  public int findStatus(String swimStatus, int price){
+    if (swimStatus.equals("Active") || swimStatus.equals("Aktiv")){
+      return price;
+    } else {
+      return 500;
+    }
+  }
+
 
   
   public Medlem createNewMember(){
@@ -101,28 +109,7 @@ public class Main {
 
     System.out.print("Enter your type of Swimmer (Exerciser/Competetive (Motionist/Konkurrence)): ");
     String swimType = scan.nextLine();
-
-    if (swimStatus.equals("Active") || swimStatus.equals("Aktiv")){
-      swimStatus = "Aktiv";
-      if (age < 18){
-        String ageGroup = "Junior Svømmer";
-        int price = 1000;
-      } else if (age > 60){
-        String ageGroup = "Senior Svømmer";
-        int price = 1200;
-      } else {
-        String ageGroup = "Senior Svømmer";
-        int price = 1600;
-      }
-    } else {
-      swimStatus = "Passiv";
-      int price = 500;
-      if (age < 18) {
-        String ageGroup = "Junior Svømmer";
-      } else {
-        String ageGroup = "Senior Svømmer";
-      }
-    }
+    //findStatus();
 
     if (swimType.equals("Competetive") || swimType.equals("Konkurrence")) {
       // Spørg om mere
@@ -162,7 +149,8 @@ public class Main {
       LocalDate timeEventDate = LocalDate.parse(eventDate, formatDating);
     }
     String ageGroup = findAgeGroup(age);
-    int price = findPrice(ageGroup);
+    int tempPrice = findPrice(ageGroup);
+    int price = findStatus(swimStatus, tempPrice);
     return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
   }
 

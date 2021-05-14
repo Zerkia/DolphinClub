@@ -33,3 +33,17 @@ Aktiv
 1200
 13-05-2021
 
+Mads
+15
+Junior Svømmer
+Passiv
+500
+14-05-2021
+
+MadsAktiv
+20
+Senior Svømmer
+Aktiv
+1600
+14-05-2021
+
