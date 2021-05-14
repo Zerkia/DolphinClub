@@ -58,6 +58,30 @@ public class Main {
     return competetiveSwimmers;
   }
 
+  public String findAgeGroup(int age){
+    if (age < 18){
+      String ageGroup = "Junior Svømmer";
+      return ageGroup;
+
+    } else if (age > 60){
+      String ageGroup = "Pensionist Svømmer";
+      return ageGroup;
+    } else {
+      String ageGroup = "Senior Svømmer";
+      return ageGroup;
+    }
+  }
+  public int findPrice(String ageGroup){
+    if (ageGroup.equals("Junior Svømmer")){
+      return 1000;
+    } else if(ageGroup.equals("Senior Svømmer")){
+      return 1600;
+    } else {
+      return 1200;
+    }
+  }
+
+  
   public Medlem createNewMember(){
     Scanner scan = new Scanner(System.in);
     LocalDateTime time = LocalDateTime.now();
@@ -137,6 +161,8 @@ public class Main {
       String eventDate = scan.nextLine();
       LocalDate timeEventDate = LocalDate.parse(eventDate, formatDating);
     }
+    String ageGroup = findAgeGroup(age);
+    int price = findPrice(ageGroup);
     return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
   }
 
