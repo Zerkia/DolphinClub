@@ -3,8 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 public class FileHandler {
 
@@ -36,13 +34,16 @@ public class FileHandler {
    for (int i = 0; i < competetiveMember.size(); i++) {
     save.println(competetiveMember.get(i).getName());
     save.println(competetiveMember.get(i).getAge());
-    //make space for junior/senior member (Being calculated based on age entered)
+    save.println(competetiveMember.get(i).getAgeGroup());
+    save.println(competetiveMember.get(i).getStatus());
+    save.println(competetiveMember.get(i).getPrice());
+    save.println(competetiveMember.get(i).getTime());
     save.println(competetiveMember.get(i).getDiscipline());
     save.println(competetiveMember.get(i).getPersonalBest());
     save.println(competetiveMember.get(i).getDate());
     save.println(competetiveMember.get(i).getEvent());
     save.println(competetiveMember.get(i).getPlacement());
-    save.println(competetiveMember.get(i).getEventTime());
+    save.println(competetiveMember.get(i).getEventDate());
     save.println();
    }
    save.close();

@@ -88,7 +88,6 @@ public class Main {
     }
   }
 
-
   
   public Medlem createNewMember(){
     Scanner scan = new Scanner(System.in);
@@ -109,55 +108,75 @@ public class Main {
 
     System.out.print("Enter your type of Swimmer (Exerciser/Competetive (Motionist/Konkurrence)): ");
     String swimType = scan.nextLine();
-    //findStatus();
+
+    String ageGroup = findAgeGroup(age);
+    int tempPrice = findPrice(ageGroup);
+    int price = findStatus(swimStatus, tempPrice);
 
     if (swimType.equals("Competetive") || swimType.equals("Konkurrence")) {
       // Spørg om mere
-      swimStatus = "Aktiv";
       swimType = "Konkurrence";
+      swimStatus = "Aktiv";
 
       System.out.println(
           "Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
-      System.out.println("Enter Discipline");
+      System.out.print("Enter Discipline: ");
       String discipline = scan.nextLine();
 
-      /**
-       * System.out.println("Enter Personal best (lap record) (Minute(s))"); int
-       * personalBestMinute = scan.nextInt();
-       *
-       * <p>System.out.println("Enter Personal best (lap record) (Second(s))"); int
-       * personalBestSecond = scan.nextInt();
-       *
-       * <p>String personalBest = personalBestMinute + ":" + personalBestSecond;
-       */
-      System.out.println("Enter Personal best (lap record)");
+      System.out.print("Enter Personal best (lap record) (Minute(s)): ");
+      int personalBestMinute = scan.nextInt();
+
+      System.out.print("Enter Personal best (lap record) (Second(s)): ");
+      int personalBestSecond = scan.nextInt();
+      scan.nextLine();
+
+      String personalBest = personalBestMinute + ":" + personalBestSecond;
+
+      System.out.print("Enter date of Personal best (F.x. 27/6/2021): ");
+      String date = scan.nextLine();
+
+      /**System.out.println("Enter Personal best (lap record)");
       String personalBest = scan.nextLine();
       LocalTime timePersonalBest = LocalTime.parse(personalBest, formatTiming);
 
       System.out.println("Enter date of Personal best");
       String date = scan.nextLine();
       LocalDate timeDate = LocalDate.parse(date, formatDating);
+      */
 
-      System.out.println("Enter event name (if any)");
+      System.out.print("Enter event name (if any, otherwise type \'none\'): ");
       String event = scan.nextLine();
 
-      System.out.println("Enter Placement of event");
-      int eventPlacement = scan.nextInt();
+      if(event.equals("none")){
+        return new KonkurrenceSvømmer(name, age, ageGroup, swimStatus, price,
+                                      formattedDate, discipline, personalBest,
+                                      date, "no events", null, "no events");
+      } else {
+        System.out.print("Enter Placement of event (F.x. \'1\', not \'1st\': ");
+        int eventPlacement = scan.nextInt();
+        scan.nextLine();
 
-      System.out.println("Enter date of event");
-      String eventDate = scan.nextLine();
-      LocalDate timeEventDate = LocalDate.parse(eventDate, formatDating);
+        System.out.print("Enter date of event (F.x. 27/6/2021): ");
+        String eventDate = scan.nextLine();
+
+        return new KonkurrenceSvømmer(name, age, ageGroup, swimStatus, price,
+            formattedDate, discipline, personalBest,
+            date, event, eventPlacement, eventDate);
+      }
+    } else {
+      return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
     }
-    String ageGroup = findAgeGroup(age);
-    int tempPrice = findPrice(ageGroup);
-    int price = findStatus(swimStatus, tempPrice);
-    return new MotionistSvømmer(name, age, ageGroup, swimStatus, price, formattedDate);
   }
 
   void run(){
-
-    exerciseSwimmers.add((MotionistSvømmer) createNewMember());
-    memberFiles.saveExerciseSwimmer(exerciseSwimmers);
+    Medlem addMember = createNewMember();
+    if(addMember.getStatus().equals("Konkurrence")){
+      competetiveSwimmers.add((KonkurrenceSvømmer) addMember);
+      memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
+    } else {
+      exerciseSwimmers.add((MotionistSvømmer) addMember);
+      memberFiles.saveExerciseSwimmer(exerciseSwimmers);
+    }
   }
 
   public static void main(String[] args) { new Main().run(); }

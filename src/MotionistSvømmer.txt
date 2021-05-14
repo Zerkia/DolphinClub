@@ -47,3 +47,31 @@ Aktiv
 1600
 14-05-2021
 
+NikoAktiv
+9320
+Pensionist Svømmer
+Aktiv
+1200
+14-05-2021
+
+NikoPassiv
+12
+Junior Svømmer
+Passiv
+1000
+14-05-2021
+
+NikoPassiv2
+18
+Senior Svømmer
+Passiv
+500
+14-05-2021
+
+NikoTest
+29
+Senior Svømmer
+Aktiv
+1600
+14-05-2021
+

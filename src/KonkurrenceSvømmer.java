@@ -1,7 +1,3 @@
-import java.time.format.DateTimeFormatter;
-import java.time.LocalTime;
-import java.time.LocalDate;
-
 /**
  * @Nikolaj
  */
@@ -21,11 +17,11 @@ public class KonkurrenceSvømmer implements Medlem{
   //KonkurrenceSvømmer event info
   private String event;
   private int placement;
-  private String eventTime;
+  private String eventDate;
 
   public KonkurrenceSvømmer(String name, int age, String ageGroup, String status, int price, String time,
-                            String discipline, String personalBest, String date, String event, int placement,
-                            String eventTime
+                            String discipline, String personalBest, String date, String event, Integer placement,
+                            String eventDate
                             ) {
     setName(name);
     setAge(age);
@@ -38,7 +34,7 @@ public class KonkurrenceSvømmer implements Medlem{
     setDate(date);
     setEvent(event);
     setPlacement(placement);
-    setEventTime(eventTime);
+    setEventDate(eventDate);
   }
 
   public String getName() { return name; }
@@ -63,7 +59,7 @@ public class KonkurrenceSvømmer implements Medlem{
 
   public int getPlacement() { return placement; }
 
-  public String getEventTime() { return eventTime; }
+  public String getEventDate() { return eventDate; }
 
   public void setName(String name) { this.name = name; }
 
@@ -87,7 +83,7 @@ public class KonkurrenceSvømmer implements Medlem{
 
   public void setPlacement(int placement) { this.placement = placement; }
 
-  public void setEventTime(String eventTime) { this.eventTime = eventTime; }
+  public void setEventDate(String eventDate) { this.eventDate = eventDate; }
 
   @Override
   public String toString() {
@@ -101,6 +97,6 @@ public class KonkurrenceSvømmer implements Medlem{
         "\nPB Date = " + getDate() +
         "\nEvent = " + getEvent() +
         "\nPlacement = " + getPlacement() +
-        "\nEventTime = " + getEventTime();
+        "\nEventTime = " + getEventDate();
   }
 }
