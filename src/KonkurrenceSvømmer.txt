@@ -1,0 +1,42 @@
+NikoTest
+29
+Senior Svømmer
+Aktiv
+Konkurrence
+1600
+14-05-2021
+Bryst
+1:2
+2/2/2021
+none
+0
+none
+
+ma
+1
+Junior Svømmer
+Aktiv
+Konkurrence
+1000
+16-05-2021
+bryst
+1:1
+2/2/2021
+no events
+0
+no events
+
+mads
+22
+Senior Svømmer
+Aktiv
+Konkurrence
+1600
+16-05-2021
+Bryst
+1:1
+22/2/2021
+Eventtest
+1
+2/2/2021
+

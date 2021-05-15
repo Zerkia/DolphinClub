@@ -12,12 +12,14 @@ public class MotionistSvømmer implements Medlem{
   private String status;
   private int price;
   private String time;
+  private String swimType;
 
-  public MotionistSvømmer(String name, int age, String ageGroup, String status, int price, String time){
+  public MotionistSvømmer(String name, int age, String ageGroup, String status, String swimType, int price, String time){
     setName(name);
     setAge(age);
     setAgeGroup(ageGroup);
     setStatus(status);
+    setSwimType(swimType);
     setPrice(price);
     setTime(time);
   }
@@ -29,6 +31,8 @@ public class MotionistSvømmer implements Medlem{
   public String getAgeGroup() { return ageGroup; }
 
   public String getStatus() { return status; }
+
+  public String getSwimType() {return swimType; }
 
   public int getPrice() { return price; }
 
@@ -42,6 +46,8 @@ public class MotionistSvømmer implements Medlem{
 
   public void setStatus(String status) { this.status = status; }
 
+  public void setSwimType(String swimType){ this.swimType = swimType; }
+
   public void setPrice(int price) { this.price = price; }
 
   public void setTime(String time) { this.time = time; }
@@ -49,7 +55,7 @@ public class MotionistSvømmer implements Medlem{
   @Override
   public String toString() {
     return "Name = " + getName() + "\nAge = " + getAge() +
-        "\nAge Group = " + getAgeGroup() + "\nSwimming Status = " + getStatus() +
+        "\nAge Group = " + getAgeGroup() + "\nSwimming Status = " + getStatus() + "\nType of swimmer = " + getSwimType() +
         "\nPrice per year = " + getPrice() + "\nDate of creation = " + getTime();
   }
 }

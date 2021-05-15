@@ -8,6 +8,7 @@ public class KonkurrenceSvømmer implements Medlem{
   private String ageGroup;
   //Spørg om konkurrence kan være passiv
   private String status;
+  private String swimType;
   private int price;
   private String time;
   //KonkurrenceSvømmer info
@@ -19,7 +20,7 @@ public class KonkurrenceSvømmer implements Medlem{
   private int placement;
   private String eventDate;
 
-  public KonkurrenceSvømmer(String name, int age, String ageGroup, String status, int price, String time,
+  public KonkurrenceSvømmer(String name, int age, String ageGroup, String status, String swimType, int price, String time,
                             String discipline, String personalBest, String date, String event, Integer placement,
                             String eventDate
                             ) {
@@ -27,6 +28,7 @@ public class KonkurrenceSvømmer implements Medlem{
     setAge(age);
     setAgeGroup(ageGroup);
     setStatus(status);
+    setSwimType(swimType);
     setPrice(price);
     setTime(time);
     setDiscipline(discipline);
@@ -44,6 +46,8 @@ public class KonkurrenceSvømmer implements Medlem{
   public String getAgeGroup() { return ageGroup; }
 
   public String getStatus() { return status; }
+
+  public String getSwimType(){ return swimType; }
 
   public int getPrice() {return price; }
 
@@ -66,6 +70,8 @@ public class KonkurrenceSvømmer implements Medlem{
   public void setAge(int age) { this.age = age; }
 
   public void setAgeGroup(String ageGroup) { this.ageGroup = ageGroup; }
+
+  public void setSwimType(String swimType) { this.swimType = swimType; }
 
   public void setStatus(String status) { this.status = status; }
 
@@ -90,6 +96,7 @@ public class KonkurrenceSvømmer implements Medlem{
     return "Name = " + getName() +
         "\nAge = " + getAge() +
         "\nAge Group = " + getAgeGroup() +
+        "\nStatus = " + getStatus() +
         "\nPrice = " + getPrice() +
         "\nDate of creation = " + getTime() +
         "\nDiscipline = " + getDiscipline() +

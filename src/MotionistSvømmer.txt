@@ -2,6 +2,7 @@ Test
 23
 Senior Svømmer
 Aktiv
+Motionist
 1600
 11-05-2021
 
@@ -9,6 +10,7 @@ mads
 13
 Junior Svømmer
 Passiv
+Motionist
 500
 13-05-2021
 
@@ -16,6 +18,7 @@ Nikolaj
 23
 Senior Svømmer
 Passiv
+Motionist
 500
 13-05-2021
 
@@ -23,6 +26,7 @@ Nikolaj2
 29
 Senior Svømmer
 Aktiv
+Motionist
 1600
 13-05-2021
 
@@ -30,6 +34,7 @@ jrioea
 234
 Senior Svømmer
 Aktiv
+Motionist
 1200
 13-05-2021
 
@@ -37,6 +42,7 @@ Mads
 15
 Junior Svømmer
 Passiv
+Motionist
 500
 14-05-2021
 
@@ -44,6 +50,7 @@ MadsAktiv
 20
 Senior Svømmer
 Aktiv
+Motionist
 1600
 14-05-2021
 
@@ -51,6 +58,7 @@ NikoAktiv
 9320
 Pensionist Svømmer
 Aktiv
+Motionist
 1200
 14-05-2021
 
@@ -58,6 +66,7 @@ NikoPassiv
 12
 Junior Svømmer
 Passiv
+Motionist
 1000
 14-05-2021
 
@@ -65,6 +74,7 @@ NikoPassiv2
 18
 Senior Svømmer
 Passiv
+Motionist
 500
 14-05-2021
 
@@ -72,6 +82,15 @@ NikoTest
 29
 Senior Svømmer
 Aktiv
+Motionist
 1600
 14-05-2021
+
+mads 
+2
+Junior Svømmer
+Aktiv
+Motionist
+1000
+15-05-2021
 

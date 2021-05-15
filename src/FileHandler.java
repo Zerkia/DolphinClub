@@ -16,6 +16,7 @@ public class FileHandler {
     save.println(exerciseSwimmer.get(i).getAge());
     save.println(exerciseSwimmer.get(i).getAgeGroup());
     save.println(exerciseSwimmer.get(i).getStatus());
+    save.println(exerciseSwimmer.get(i).getSwimType());
     save.println(exerciseSwimmer.get(i).getPrice());
     save.println(exerciseSwimmer.get(i).getTime());
     save.println();
@@ -36,6 +37,7 @@ public class FileHandler {
     save.println(competetiveMember.get(i).getAge());
     save.println(competetiveMember.get(i).getAgeGroup());
     save.println(competetiveMember.get(i).getStatus());
+    save.println(competetiveMember.get(i).getSwimType());
     save.println(competetiveMember.get(i).getPrice());
     save.println(competetiveMember.get(i).getTime());
     save.println(competetiveMember.get(i).getDiscipline());
