@@ -104,6 +104,7 @@ public class KonkurrenceSvømmer implements Medlem{
         "\nPB Date = " + getDate() +
         "\nEvent = " + getEvent() +
         "\nPlacement = " + getPlacement() +
-        "\nEventTime = " + getEventDate();
+        "\nEventTime = " + getEventDate() +
+        "\n";
   }
 }

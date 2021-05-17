@@ -10,9 +10,9 @@ public class MotionistSvømmer implements Medlem{
   private int age;
   private String ageGroup;
   private String status;
+  private String swimType;
   private int price;
   private String time;
-  private String swimType;
 
   public MotionistSvømmer(String name, int age, String ageGroup, String status, String swimType, int price, String time){
     setName(name);
@@ -56,6 +56,6 @@ public class MotionistSvømmer implements Medlem{
   public String toString() {
     return "Name = " + getName() + "\nAge = " + getAge() +
         "\nAge Group = " + getAgeGroup() + "\nSwimming Status = " + getStatus() + "\nType of swimmer = " + getSwimType() +
-        "\nPrice per year = " + getPrice() + "\nDate of creation = " + getTime();
+        "\nPrice per year = " + getPrice() + "\nDate of creation = " + getTime() + "\n";
   }
 }

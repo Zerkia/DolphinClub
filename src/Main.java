@@ -64,7 +64,6 @@ public class Main {
     if (age < 18){
       String ageGroup = "Junior Svømmer";
       return ageGroup;
-
     } else if (age > 60){
       String ageGroup = "Pensionist Svømmer";
       return ageGroup;
@@ -90,12 +89,10 @@ public class Main {
     }
   }
 
-
   public Medlem createNewMember(){
     Scanner scan = new Scanner(System.in);
     LocalDateTime time = LocalDateTime.now();
     DateTimeFormatter formatDating = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-    DateTimeFormatter formatTiming = DateTimeFormatter.ofPattern("mm:ss");
     String formattedDate = time.format(formatDating);
 
     System.out.print("Enter name: ");
@@ -119,9 +116,10 @@ public class Main {
       // Spørg om mere
       swimType = "Konkurrence";
       swimStatus = "Aktiv";
+      price = findStatus(swimStatus, tempPrice);
 
       System.out.println(
-              "Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
+          "Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
       System.out.print("Enter Discipline: ");
       String discipline = scan.nextLine();
 
@@ -134,42 +132,76 @@ public class Main {
 
       String personalBest = personalBestMinute + ":" + personalBestSecond;
 
-      System.out.print("Enter date of Personal best (F.x. 27/6/2021): ");
+      System.out.print("Enter date of Personal best (F.x. 27-6-2021): ");
       String date = scan.nextLine();
-
-      /**System.out.println("Enter Personal best (lap record)");
-       String personalBest = scan.nextLine();
-       LocalTime timePersonalBest = LocalTime.parse(personalBest, formatTiming);
-       System.out.println("Enter date of Personal best");
-       String date = scan.nextLine();
-       LocalDate timeDate = LocalDate.parse(date, formatDating);
-       */
 
       System.out.print("Enter event name (if any, otherwise type \'none\'): ");
       String event = scan.nextLine();
 
       if(event.equals("none")){
         return new KonkurrenceSvømmer(name, age, ageGroup, swimStatus, swimType, price,
-                formattedDate, discipline, personalBest,
-                date, "no events", 0, "no events");
+            formattedDate, discipline, personalBest,
+            date, "no event participations", 0, "no event participations");
       } else {
         System.out.print("Enter Placement of event (F.x. \'1\', not \'1st\': ");
         int eventPlacement = scan.nextInt();
         scan.nextLine();
 
-        System.out.print("Enter date of event (F.x. 27/6/2021): ");
+        System.out.print("Enter date of event (F.x. 27-6-2021): ");
         String eventDate = scan.nextLine();
 
         return new KonkurrenceSvømmer(name, age, ageGroup, swimStatus, swimType, price,
-                formattedDate, discipline, personalBest,
-                date, event, eventPlacement, eventDate);
+            formattedDate, discipline, personalBest,
+            date, event, eventPlacement, eventDate);
       }
     } else {
       return new MotionistSvømmer(name, age, ageGroup, swimStatus, swimType, price, formattedDate);
     }
   }
 
+  public void deleteExerciseSwimmer(){
+    System.out.print("Please enter a number to remove the corresponding order number: ");
+    Scanner scan = new Scanner(System.in);
+    int removalInt = scan.nextInt()-1;
+
+    //failsafe
+    if(removalInt < 0){
+      removalInt = 0;
+    } else if (removalInt > exerciseSwimmers.size()) {
+      removalInt = exerciseSwimmers.size()-1;
+    }
+    exerciseSwimmers.remove(removalInt);
+  }
+
+  public void deleteCompetetiveSwimmer(){
+    System.out.print("Please enter a number to remove the corresponding order number: ");
+    Scanner scan = new Scanner(System.in);
+    int removalInt = scan.nextInt()-1;
+
+    //failsafe
+    if(removalInt < 0){
+      removalInt = 0;
+    } else if (removalInt > competetiveSwimmers.size()) {
+      removalInt = competetiveSwimmers.size()-1;
+    }
+    competetiveSwimmers.remove(removalInt);
+  }
+
+  public void viewExerciseSwimmer(){
+    for (int i = 0; i < exerciseSwimmers.size(); i++) {
+      System.out.println(exerciseSwimmers.get(i));
+    }
+  }
+
+  public void viewCompetetiveSwimmers(){
+    for (int i = 0; i < competetiveSwimmers.size(); i++) {
+      System.out.println(competetiveSwimmers.get(i));
+    }
+  }
+
   void run(){
+    /**
+     * create a member into MotionistSvømmer.txt or KonkurrenceSvømmer.txt
     Medlem addMember = createNewMember();
     if(addMember.getSwimType().equals("Konkurrence")){
       competetiveSwimmers.add((KonkurrenceSvømmer) addMember);
@@ -177,7 +209,25 @@ public class Main {
     } else {
       exerciseSwimmers.add((MotionistSvømmer) addMember);
       memberFiles.saveExerciseSwimmer(exerciseSwimmers);
-    }
+    }*/
+
+    /**
+     * view all inputs from MotionistSvømmer.txt and/or KonkurrenceSvømmer.txt
+    viewExerciseSwimmer();
+    viewCompetetiveSwimmers();
+    */
+
+    /**
+     * deleting of MotionistSvømmer.txt inputs
+    deleteExerciseSwimmer();
+    memberFiles.saveExerciseSwimmer(exerciseSwimmers);
+    */
+
+    /**
+     * deleting of KonkurrenceSvømmer.txt inputs
+     deleteCompetetiveSwimmer();
+     memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
+     */
   }
 
   public static void main(String[] args) { new Main().run(); }
