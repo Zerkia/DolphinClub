@@ -1,3 +1,6 @@
+/**
+ * @Mads
+ */
 public interface Medlem {
 	String toString();
 

@@ -1,8 +1,10 @@
+import java.security.KeyPair;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -33,6 +35,7 @@ public class Main {
     return exerciseSwimmers;
   }
 
+
   public ArrayList<KonkurrenceSvømmer> loadCompetetiveSwimmer() {
 
     ArrayList<String> load = memberFiles.readCompetetiveSwimmers();
@@ -53,6 +56,7 @@ public class Main {
       String fetchEvent = load.get(i+10);
       int fetchPlacement = Integer.parseInt(load.get(i+11));
       String fetchEventTime = load.get(i+12);
+
 
       competetiveSwimmers.add(new KonkurrenceSvømmer(fetchName, fetchAge, fetchAgeGroup, fetchStatus, fetchSwimType, fetchPrice, fetchTime, fetchDiscipline, fetchPersonalBest, fetchDate, fetchEvent, fetchPlacement, fetchEventTime));
     }
@@ -88,6 +92,7 @@ public class Main {
       return 500;
     }
   }
+
 
   public Medlem createNewMember(){
     Scanner scan = new Scanner(System.in);
@@ -131,6 +136,8 @@ public class Main {
       scan.nextLine();
 
       String personalBest = personalBestMinute + ":" + personalBestSecond;
+
+      int personalBestInt = personalBestMinute * 60 + personalBestSecond;
 
       System.out.print("Enter date of Personal best (F.x. 27-6-2021): ");
       String date = scan.nextLine();
@@ -199,7 +206,15 @@ public class Main {
     }
   }
 
+  public void sortCompetiveSwimmers(){
+    competetiveSwimmers.sort(new PersonalBestSorter());
+    memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
+    
+  }
+
   void run(){
+
+    sortCompetiveSwimmers();
     /**
      * create a member into MotionistSvømmer.txt or KonkurrenceSvømmer.txt
     Medlem addMember = createNewMember();
@@ -231,4 +246,5 @@ public class Main {
   }
 
   public static void main(String[] args) { new Main().run(); }
+
 }

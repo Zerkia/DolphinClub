@@ -91,6 +91,8 @@ public class KonkurrenceSvømmer implements Medlem{
 
   public void setEventDate(String eventDate) { this.eventDate = eventDate; }
 
+
+
   @Override
   public String toString() {
     return "Name = " + getName() +
@@ -107,4 +109,5 @@ public class KonkurrenceSvømmer implements Medlem{
         "\nEventTime = " + getEventDate() +
         "\n";
   }
+
 }
