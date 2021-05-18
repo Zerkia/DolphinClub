@@ -137,8 +137,6 @@ public class Main {
 
       String personalBest = personalBestMinute + ":" + personalBestSecond;
 
-      int personalBestInt = personalBestMinute * 60 + personalBestSecond;
-
       System.out.print("Enter date of Personal best (F.x. 27-6-2021): ");
       String date = scan.nextLine();
 
