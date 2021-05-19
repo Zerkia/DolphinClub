@@ -1,10 +1,6 @@
-import java.security.KeyPair;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -204,43 +200,127 @@ public class Main {
     }
   }
 
-  public void sortCompetiveSwimmers(){
+  public void sortCompetetiveSwimmers(){
     competetiveSwimmers.sort(new PersonalBestSorter());
     memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
     
   }
 
   void run(){
+    DisplayMenu displayMenu =
+        new DisplayMenu(
+          "Menu:",
+          "Please choose option: ",
+          new String[] {
+          "1. Create new member",
+          "2. Delete exercise swimmer",
+          "3. Delete competetive swimmer",
+          "4. View exercise swimmers",
+          "5. View competetive swimmers",
+          "6. View all swimmers",
+          "7. View top 5 junior butterfly times",
+          "8. View top 5 junior freestyle times",
+          "9. View top 5 junior backstroke times",
+          "10. View top 5 junior breaststroke times",
+          "11. View top 5 senior butterfly times",
+          "12. View top 5 senior freestyle times",
+          "13. View top 5 senior backstroke times",
+          "14. View top 5 senior breaststroke times",
+          "15. Quit"
+          });
 
-    sortCompetiveSwimmers();
-    /**
-     * create a member into MotionistSvømmer.txt or KonkurrenceSvømmer.txt
-    Medlem addMember = createNewMember();
-    if(addMember.getSwimType().equals("Konkurrence")){
-      competetiveSwimmers.add((KonkurrenceSvømmer) addMember);
-      memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
-    } else {
-      exerciseSwimmers.add((MotionistSvømmer) addMember);
-      memberFiles.saveExerciseSwimmer(exerciseSwimmers);
-    }*/
+    displayMenu.printMenu();
+    boolean isRunning = true;
 
-    /**
-     * view all inputs from MotionistSvømmer.txt and/or KonkurrenceSvømmer.txt
-    viewExerciseSwimmer();
-    viewCompetetiveSwimmers();
-    */
+    while(isRunning){
+      int choice = displayMenu.readChoice();
+      switch (choice) {
+        case 1:
+          Medlem addMember = createNewMember();
+          if(addMember.getSwimType().equals("Konkurrence")){
+            competetiveSwimmers.add((KonkurrenceSvømmer) addMember);
+            memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
+          } else {
+            exerciseSwimmers.add((MotionistSvømmer) addMember);
+            memberFiles.saveExerciseSwimmer(exerciseSwimmers);
+          }
+          displayMenu.printMenu();
+          break;
 
-    /**
-     * deleting of MotionistSvømmer.txt inputs
-    deleteExerciseSwimmer();
-    memberFiles.saveExerciseSwimmer(exerciseSwimmers);
-    */
+        case 2:
+          deleteExerciseSwimmer();
+          displayMenu.printMenu();
+          break;
 
-    /**
-     * deleting of KonkurrenceSvømmer.txt inputs
-     deleteCompetetiveSwimmer();
-     memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
-     */
+        case 3:
+          deleteCompetetiveSwimmer();
+          displayMenu.printMenu();
+          break;
+
+        case 4:
+          viewExerciseSwimmer();
+          displayMenu.printMenu();
+          break;
+
+        case 5:
+          viewCompetetiveSwimmers();
+          displayMenu.printMenu();
+          break;
+
+        case 6:
+          viewExerciseSwimmer();
+          viewCompetetiveSwimmers();
+          displayMenu.printMenu();
+          break;
+
+        case 7:
+          //View top 5 junior butterfly times
+          displayMenu.printMenu();
+          break;
+
+        case 8:
+          //View top 5 junior freestyle times
+          displayMenu.printMenu();
+          break;
+
+        case 9:
+          //View top 5 junior backstroke times
+          displayMenu.printMenu();
+          break;
+
+        case 10:
+          //View top 5 junior breaststroke times
+          displayMenu.printMenu();
+          break;
+
+        case 11:
+          //View top 5 senior butterfly times
+          displayMenu.printMenu();
+          break;
+
+        case 12:
+          //View top 5 senior freestyle times
+          displayMenu.printMenu();
+          break;
+
+        case 13:
+          //View top 5 senior backstroke times
+          displayMenu.printMenu();
+          break;
+
+        case 14:
+          //View top 5 senior breaststroke times
+          displayMenu.printMenu();
+          break;
+
+        case 15:
+          isRunning = false;
+          break;
+
+        default:
+          System.out.println("Please input one of the numbers on the screen please.");
+      }
+    }
   }
 
   public static void main(String[] args) { new Main().run(); }
