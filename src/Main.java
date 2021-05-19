@@ -88,26 +88,12 @@ public class Main {
       return 500;
     }
   }
-
-
-  public Medlem createNewMember(){
-    Scanner scan = new Scanner(System.in);
-    LocalDateTime time = LocalDateTime.now();
-    DateTimeFormatter formatDating = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-    String formattedDate = time.format(formatDating);
-
-    System.out.print("Enter name: ");
-    String name = scan.nextLine();
-
-    System.out.print("Enter age: ");
-    int age = scan.nextInt();
-    scan.nextLine();
-
+  public String findSwimStatus(Scanner scan, int swimStatusChoice){
     System.out.print("Enter Swimmer status:\n" +
                     "1. Passive\n" +
-                    "2. Active");
+                    "2. Active\n");
     String swimStatus = "";
-    int swimStatusChoice = scan.nextInt();
+    swimStatusChoice = scan.nextInt();
 
     while(swimStatus == ""){
       switch(swimStatusChoice){
@@ -124,13 +110,16 @@ public class Main {
     }
     scan.nextLine();
 
+    return swimStatus;
+  }
+  public String findSwimType(Scanner scan,int swimTypeChoice) {
     System.out.print("Enter your type of Swimmer:\n" +
-                    "1. Exerciser\n" +
-                    "2. Competetive");
+            "1. Exerciser\n" +
+            "2. Competetive\n");
     String swimType = "";
-    int swimTypeChoice = scan.nextInt();
-    while(swimType == ""){
-      switch(swimTypeChoice){
+    swimTypeChoice = scan.nextInt();
+    while (swimType == "") {
+      switch (swimTypeChoice) {
         case 1:
           swimType = "Motionist";
           break;
@@ -143,6 +132,90 @@ public class Main {
       }
     }
     scan.nextLine();
+    return swimType;
+  }
+  public String findDiscipline(Scanner scan, int disChoice){
+    System.out.println(
+        "Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
+    System.out.print("Enter DisciplineSorter: \n" +
+                    "1. Butterfly\n" +
+                    "2. Freestyle\n" +
+                    "3. Backstroke\n" +
+                    "4. Breaststroke\n");
+    String discipline = "";
+    disChoice = scan.nextInt();
+    while(discipline == ""){
+      switch(disChoice){
+        case 1:
+          discipline = "Butterfly";
+          break;
+        case 2:
+          discipline = "Freestyle";
+          break;
+        case 3:
+          discipline = "Backstroke";
+          break;
+        case 4:
+          discipline = "Breaststroke";
+          break;
+        default:
+          System.out.println("Please choose a number between 1 and 4");
+          disChoice = scan.nextInt();
+      }
+    }
+    scan.nextLine();
+    return discipline;
+  }
+  public String findPersonalBest(Scanner scan, int personalBestMinute, int personalBestSecond){
+    while(personalBestMinute < 0 || personalBestSecond < 0) {
+      if(personalBestMinute<0) {
+        System.out.print("Enter Personal best (lap record) (Minute(s)): ");
+        personalBestMinute = scan.nextInt();
+      } else if(personalBestSecond<0) {
+        System.out.print("Enter Personal best (lap record) (Second(s)): ");
+        personalBestSecond = scan.nextInt();
+
+      }
+      scan.nextLine();
+    }
+    return personalBestMinute + ":" + personalBestSecond;
+
+  }
+
+  public int findEventPlacement(Scanner scan, int eventPlacement){
+    while(eventPlacement <1) {
+      System.out.print("Enter Placement of event (F.x. \'1\', not \'1st\': ");
+      eventPlacement = scan.nextInt();
+
+    }
+    scan.nextLine();
+    return eventPlacement;
+  }
+  public String findDate(Scanner scan, String eventDate){
+    while(!eventDate.matches(("\\d{2}-\\d{2}-\\d{4}"))) {
+      System.out.print("Enter date of event (F.x. 27-6-2021): ");
+      eventDate = scan.nextLine();
+    }
+    return eventDate;
+
+  }
+
+  public Medlem createNewMember(){
+    Scanner scan = new Scanner(System.in);
+    LocalDateTime time = LocalDateTime.now();
+    DateTimeFormatter formatDating = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    String formattedDate = time.format(formatDating);
+
+    System.out.print("Enter name: ");
+    String name = scan.nextLine();
+
+    System.out.print("Enter age: ");
+    int age = scan.nextInt();
+    scan.nextLine();
+    
+    String swimStatus = findSwimStatus(scan,0);
+
+    String swimType = findSwimType(scan,0);
 
     String ageGroup = findAgeGroup(age);
     int tempPrice = findPrice(ageGroup);
@@ -151,48 +224,10 @@ public class Main {
     if (swimType.equals("Konkurrence")) {
       swimStatus = "Aktiv";
       price = findStatus(swimStatus, tempPrice);
+      String discipline = findDiscipline(scan,0);
+      String personalBest = findPersonalBest(scan,-1,-1);
 
-      System.out.println(
-          "Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
-      System.out.print("Enter Discipline: \n" +
-                      "1. Butterfly\n" +
-                      "2. Freestyle\n" +
-                      "3. Backstroke\n" +
-                      "4. Breaststroke");
-      String discipline = "";
-      int disChoice = scan.nextInt();
-      while(discipline == ""){
-        switch(disChoice){
-          case 1:
-            discipline = "Butterfly";
-            break;
-          case 2:
-            discipline = "Freestyle";
-            break;
-          case 3:
-            discipline = "Backstroke";
-            break;
-          case 4:
-            discipline = "Breaststroke";
-            break;
-          default:
-            System.out.println("Please choose a number between 1 and 4");
-            disChoice = scan.nextInt();
-        }
-      }
-      scan.nextLine();
-
-      System.out.print("Enter Personal best (lap record) (Minute(s)): ");
-      int personalBestMinute = scan.nextInt();
-
-      System.out.print("Enter Personal best (lap record) (Second(s)): ");
-      int personalBestSecond = scan.nextInt();
-      scan.nextLine();
-
-      String personalBest = personalBestMinute + ":" + personalBestSecond;
-
-      System.out.print("Enter date of Personal best (F.x. 27-6-2021): ");
-      String date = scan.nextLine();
+      String date = findDate(scan,"");
 
       System.out.print("Enter event name (if any, otherwise type \'none\'): ");
       String event = scan.nextLine();
@@ -202,12 +237,8 @@ public class Main {
             formattedDate, discipline, personalBest,
             date, "no event participations", 0, "no event participations");
       } else {
-        System.out.print("Enter Placement of event (F.x. \'1\', not \'1st\': ");
-        int eventPlacement = scan.nextInt();
-        scan.nextLine();
-
-        System.out.print("Enter date of event (F.x. 27-6-2021): ");
-        String eventDate = scan.nextLine();
+        int eventPlacement = findEventPlacement(scan,-0);
+        String eventDate = findDate(scan,"");
 
         return new KonkurrenceSvømmer(name, age, ageGroup, swimStatus, swimType, price,
             formattedDate, discipline, personalBest,
@@ -263,6 +294,9 @@ public class Main {
     memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
     
   }
+  public void sortCompetetiveSwimmersDiscipline(){
+    competetiveSwimmers.sort(new DisciplineSorter());
+  }
 
   void run(){
     DisplayMenu displayMenu =
@@ -297,10 +331,8 @@ public class Main {
           Medlem addMember = createNewMember();
           if(addMember.getSwimType().equals("Konkurrence")){
             competetiveSwimmers.add((KonkurrenceSvømmer) addMember);
-            memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
           } else {
             exerciseSwimmers.add((MotionistSvømmer) addMember);
-            memberFiles.saveExerciseSwimmer(exerciseSwimmers);
           }
           displayMenu.printMenu();
           break;
@@ -333,41 +365,51 @@ public class Main {
 
         case 7:
           //View top 5 junior butterfly times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
+          printSwimmers(0,"Butterfly","Junior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 8:
           //View top 5 junior freestyle times
+          printSwimmers(0,"Freestyle","Junior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 9:
           //View top 5 junior backstroke times
+          printSwimmers(0,"Backstroke","Junior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 10:
           //View top 5 junior breaststroke times
+          printSwimmers(0,"Breaststroke","Junior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 11:
           //View top 5 senior butterfly times
+          printSwimmers(0,"Butterfly","Senior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 12:
           //View top 5 senior freestyle times
+          printSwimmers(0,"Freestyle","Senior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 13:
           //View top 5 senior backstroke times
+          printSwimmers(0,"Backstroke","Senior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 14:
           //View top 5 senior breaststroke times
+          printSwimmers(0,"Breaststroke","Senior Svømmer");
           displayMenu.printMenu();
           break;
 
@@ -379,6 +421,20 @@ public class Main {
           System.out.println("Please input one of the numbers on the screen please.");
       }
     }
+    memberFiles.saveCompetetiveSwimmer(competetiveSwimmers);
+    memberFiles.saveExerciseSwimmer(exerciseSwimmers);
+  }
+  public void printSwimmers(int j, String discipline, String ageGroup){
+    for(int i = 0; i<competetiveSwimmers.size(); i++) {
+
+      if(competetiveSwimmers.get(i).getDiscipline().equals(discipline) &&
+              competetiveSwimmers.get(i).getAgeGroup().equals(ageGroup) && j<5) {
+        System.out.println(competetiveSwimmers.get(i).getName() + " " + competetiveSwimmers.get(i).getDiscipline() +
+                " " + competetiveSwimmers.get(i).getPersonalBest() + " " + competetiveSwimmers.get(i).getAgeGroup());
+        j++;
+      }
+    }
+
   }
 
   public static void main(String[] args) { new Main().run(); }

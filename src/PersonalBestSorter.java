@@ -12,7 +12,7 @@ public class PersonalBestSorter implements Comparator<KonkurrenceSvømmer> {
         int l = Integer.parseInt(k[0])*60+Integer.parseInt(k[1]);
 
         return j - l;
-        //return Integer.parseInt(o1.getPersonalBest().replace(":","")) - Integer.parseInt(o2.getPersonalBest().replace(":",""));
+
 
     }
 }

@@ -101,7 +101,7 @@ public class KonkurrenceSvømmer implements Medlem{
         "\nStatus = " + getStatus() +
         "\nPrice = " + getPrice() +
         "\nDate of creation = " + getTime() +
-        "\nDiscipline = " + getDiscipline() +
+        "\nDisciplineSorter = " + getDiscipline() +
         "\nPersonalBest = " + getPersonalBest() +
         "\nPB Date = " + getDate() +
         "\nEvent = " + getEvent() +
