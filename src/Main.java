@@ -103,26 +103,84 @@ public class Main {
     int age = scan.nextInt();
     scan.nextLine();
 
-    System.out.print("Enter Swimmer status (Passive/Active (Passiv/Aktiv): ");
-    String swimStatus = scan.nextLine();
+    System.out.print("Enter Swimmer status:\n" +
+                    "1. Passive\n" +
+                    "2. Active");
+    String swimStatus = "";
+    int swimStatusChoice = scan.nextInt();
 
-    System.out.print("Enter your type of Swimmer (Exerciser/Competetive (Motionist/Konkurrence)): ");
-    String swimType = scan.nextLine();
+    while(swimStatus == ""){
+      switch(swimStatusChoice){
+        case 1:
+          swimStatus = "Passive";
+          break;
+        case 2:
+          swimStatus = "Active";
+          break;
+        default:
+          System.out.println("Please choose either 1 or 2");
+          swimStatusChoice = scan.nextInt();
+      }
+    }
+    scan.nextLine();
+
+    System.out.print("Enter your type of Swimmer:\n" +
+                    "1. Exerciser\n" +
+                    "2. Competetive");
+    String swimType = "";
+    int swimTypeChoice = scan.nextInt();
+    while(swimType == ""){
+      switch(swimTypeChoice){
+        case 1:
+          swimType = "Motionist";
+          break;
+        case 2:
+          swimType = "Konkurrence";
+          break;
+        default:
+          System.out.println("Please choose either 1 or 2");
+          swimTypeChoice = scan.nextInt();
+      }
+    }
+    scan.nextLine();
 
     String ageGroup = findAgeGroup(age);
     int tempPrice = findPrice(ageGroup);
     int price = findStatus(swimStatus, tempPrice);
 
-    if (swimType.equals("Competetive") || swimType.equals("Konkurrence")) {
-      // Spørg om mere
-      swimType = "Konkurrence";
+    if (swimType.equals("Konkurrence")) {
       swimStatus = "Aktiv";
       price = findStatus(swimStatus, tempPrice);
 
       System.out.println(
           "Due to having picked \'Competetive\' / \'Konkurrence\', your status has been set to \'Active\' / \'Aktiv\'");
-      System.out.print("Enter Discipline: ");
-      String discipline = scan.nextLine();
+      System.out.print("Enter Discipline: \n" +
+                      "1. Butterfly\n" +
+                      "2. Freestyle\n" +
+                      "3. Backstroke\n" +
+                      "4. Breaststroke");
+      String discipline = "";
+      int disChoice = scan.nextInt();
+      while(discipline == ""){
+        switch(disChoice){
+          case 1:
+            discipline = "Butterfly";
+            break;
+          case 2:
+            discipline = "Freestyle";
+            break;
+          case 3:
+            discipline = "Backstroke";
+            break;
+          case 4:
+            discipline = "Breaststroke";
+            break;
+          default:
+            System.out.println("Please choose a number between 1 and 4");
+            disChoice = scan.nextInt();
+        }
+      }
+      scan.nextLine();
 
       System.out.print("Enter Personal best (lap record) (Minute(s)): ");
       int personalBestMinute = scan.nextInt();
