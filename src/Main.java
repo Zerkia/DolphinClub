@@ -373,42 +373,56 @@ public class Main {
 
         case 8:
           //View top 5 junior freestyle times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
           printSwimmers(0,"Freestyle","Junior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 9:
           //View top 5 junior backstroke times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
           printSwimmers(0,"Backstroke","Junior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 10:
           //View top 5 junior breaststroke times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
           printSwimmers(0,"Breaststroke","Junior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 11:
           //View top 5 senior butterfly times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
           printSwimmers(0,"Butterfly","Senior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 12:
           //View top 5 senior freestyle times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
           printSwimmers(0,"Freestyle","Senior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 13:
           //View top 5 senior backstroke times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
           printSwimmers(0,"Backstroke","Senior Svømmer");
           displayMenu.printMenu();
           break;
 
         case 14:
           //View top 5 senior breaststroke times
+          sortCompetetiveSwimmers();
+          sortCompetetiveSwimmersDiscipline();
           printSwimmers(0,"Breaststroke","Senior Svømmer");
           displayMenu.printMenu();
           break;
