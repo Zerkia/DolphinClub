@@ -193,7 +193,7 @@ public class Main {
   }
   public String findDate(Scanner scan, String eventDate){
     while(!eventDate.matches(("\\d{2}-\\d{2}-\\d{4}"))) {
-      System.out.print("Enter date of event (F.x. 27-6-2021): ");
+      System.out.print("Enter date of event (F.x. 27-06-2021): ");
       eventDate = scan.nextLine();
     }
     return eventDate;
