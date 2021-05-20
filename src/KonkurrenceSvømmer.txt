@@ -1,17 +1,3 @@
-mads
-22
-Senior Svømmer
-Aktiv
-Konkurrence
-1600
-19-05-2021
-Backstroke
-22:35
-02-01-2021
-no event participations
-0
-no event participations
-
 mp5
 2
 Junior Svømmer
@@ -26,6 +12,20 @@ no event participations
 0
 no event participations
 
+jeppe
+33
+Senior Svømmer
+Aktiv
+Konkurrence
+1600
+19-05-2021
+Butterfly
+1:2
+24-03-2021
+no event participations
+0
+no event participations
+
 pandekage2
 33
 Senior Svømmer
@@ -34,6 +34,20 @@ Konkurrence
 1600
 19-05-2021
 Breaststroke
+1:22
+22-1-2021
+no event participations
+0
+no event participations
+
+pandekageButter
+33
+Senior Svømmer
+Aktiv
+Konkurrence
+1600
+19-05-2021
+Butterfly
 1:22
 22-1-2021
 no event participations
@@ -68,6 +82,34 @@ no event participations
 0
 no event participations
 
+mads
+24
+Senior Svømmer
+Aktiv
+Konkurrence
+1600
+19-05-2021
+Butterfly
+2:1
+27-4-2021
+no event participations
+0
+no event participations
+
+mads
+2
+Junior Svømmer
+Aktiv
+Konkurrence
+1000
+19-05-2021
+Freestyle
+2:2
+02-02-2011
+no event participations
+0
+no event participations
+
 mp
 2
 Junior Svømmer
@@ -92,6 +134,20 @@ Konkurrence
 Breaststroke
 3:44
 22-2-2021
+no event participations
+0
+no event participations
+
+mp
+2
+Junior Svømmer
+Aktiv
+Konkurrence
+1000
+20-05-2021
+Breaststroke
+4:4
+24-01-2021
 no event participations
 0
 no event participations
@@ -138,6 +194,20 @@ no event participations
 0
 no event participations
 
+pandekageFree
+33
+Senior Svømmer
+Aktiv
+Konkurrence
+1600
+19-05-2021
+Freestyle
+12:22
+22-1-2021
+no event participations
+0
+no event participations
+
 mp2
 2
 Junior Svømmer
@@ -148,6 +218,20 @@ Konkurrence
 Breaststroke
 12:44
 22-2-2021
+no event participations
+0
+no event participations
+
+mads
+22
+Senior Svømmer
+Aktiv
+Konkurrence
+1600
+19-05-2021
+Backstroke
+22:35
+02-01-2021
 no event participations
 0
 no event participations
@@ -166,72 +250,16 @@ no event participations
 0
 no event participations
 
-jeppe
-33
-Senior Svømmer
-Aktiv
-Konkurrence
-1600
-19-05-2021
-Butterfly
-1:2
-24-03-2021
-no event participations
-0
-no event participations
-
-pandekageButter
-33
-Senior Svømmer
-Aktiv
-Konkurrence
-1600
-19-05-2021
-Butterfly
-1:22
-22-1-2021
-no event participations
-0
-no event participations
-
-mads
+mph
 24
 Senior Svømmer
 Aktiv
 Konkurrence
 1600
-19-05-2021
-Butterfly
-2:1
-27-4-2021
-no event participations
-0
-no event participations
-
-mads
-2
-Junior Svømmer
-Aktiv
-Konkurrence
-1000
-19-05-2021
-Freestyle
-2:2
-02-02-2011
-no event participations
-0
-no event participations
-
-pandekageFree
-33
-Senior Svømmer
-Aktiv
-Konkurrence
-1600
-19-05-2021
-Freestyle
-12:22
-22-1-2021
+20-05-2021
+Breaststroke
+22:44
+20-02-2021
 no event participations
 0
 no event participations

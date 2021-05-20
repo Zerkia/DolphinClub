@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
-
+/**
     @Test
     void findAgeGroup() {
         Main main = new Main();
@@ -21,5 +21,5 @@ class MainTest {
                 () -> assertEquals(1200,main.findPrice("Pensionist Svømmer")));
     }
 
-
+*/
 }
