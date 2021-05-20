@@ -65,72 +65,55 @@ public class Klub {
                     break;
 
                 case 6:
-                    medlemsListe.viewExerciseSwimmer();
-                    medlemsListe.viewCompetetiveSwimmers();
+                    case6Response();
                     displayMenu.printMenu();
                     break;
 
                 case 7:
                     //View top 5 junior butterfly times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Butterfly","Junior Svømmer");
+                    case7Response();
                     displayMenu.printMenu();
                     break;
 
                 case 8:
                     //View top 5 junior freestyle times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Freestyle","Junior Svømmer");
+                    case8Response();
                     displayMenu.printMenu();
                     break;
 
                 case 9:
                     //View top 5 junior backstroke times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Backstroke","Junior Svømmer");
+                    case9Response();
                     displayMenu.printMenu();
                     break;
 
                 case 10:
                     //View top 5 junior breaststroke times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Breaststroke","Junior Svømmer");
+                    case10Response();
                     displayMenu.printMenu();
                     break;
 
                 case 11:
                     //View top 5 senior butterfly times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Butterfly","Senior Svømmer");
+                    case11Response();
                     displayMenu.printMenu();
                     break;
 
                 case 12:
                     //View top 5 senior freestyle times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Freestyle","Senior Svømmer");
+                    case12Response();
                     displayMenu.printMenu();
                     break;
 
                 case 13:
                     //View top 5 senior backstroke times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Backstroke","Senior Svømmer");
+                    case13Response();
                     displayMenu.printMenu();
                     break;
 
                 case 14:
                     //View top 5 senior breaststroke times
-                    medlemsListe.sortCompetetiveSwimmers();
-                    medlemsListe.sortCompetetiveSwimmersDiscipline();
-                    medlemsListe.printSwimmers(0,"Breaststroke","Senior Svømmer");
+                    case14Response();
                     displayMenu.printMenu();
                     break;
 
@@ -141,10 +124,55 @@ public class Klub {
                 default:
                     System.out.println("Please input one of the numbers on the screen please.");
             }
-            //medlemsListe.saveCompetetive(medlemsListe);
-            //medlemsListe.saveExercise(medlemsListe.exerciseSwimmers);
         }
 
+
+    }
+    public void case6Response(){
+        medlemsListe.viewExerciseSwimmer();
+        medlemsListe.viewCompetetiveSwimmers();
+    }
+    public void case7Response() {
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Butterfly","Junior Svømmer");
+    }
+    public void case8Response(){
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Freestyle","Junior Svømmer");
+    }
+
+    public void case9Response(){
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Backstroke","Junior Svømmer");
+    }
+
+    public void case10Response(){
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Breaststroke","Junior Svømmer");
+    }
+    public void case11Response(){
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Butterfly","Senior Svømmer");
+    }
+    public void case12Response(){
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Freestyle","Senior Svømmer");
+    }
+    public void case13Response(){
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Backstroke","Senior Svømmer");
+    }
+    public void case14Response(){
+        medlemsListe.sortCompetetiveSwimmers();
+        medlemsListe.sortCompetetiveSwimmersDiscipline();
+        medlemsListe.printSwimmers(0,"Breaststroke","Senior Svømmer");
     }
 
 }
