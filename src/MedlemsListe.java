@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MedlemsListe {
+
     private static final FileHandler memberFiles = new FileHandler();
 
     private ArrayList<MotionistSvømmer> exerciseSwimmers = loadExerciseSwimmer();
