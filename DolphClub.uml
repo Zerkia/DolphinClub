@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="902.1328125">com</node>
+    <node x="0.0" y="752.1328125">netscape</node>
+    <node x="323.0" y="641.1328125">toolbarButtonGraphics</node>
+    <node x="454.50000000000006" y="0.0">Medlem</node>
+    <node x="165.0" y="902.1328125">sun</node>
+    <node x="0.0" y="827.1328125">Tests</node>
+    <node x="370.25" y="280.0">MedlemsListe</node>
+    <node x="10.5" y="170.0">PersonalBestSorter</node>
+    <node x="181.0" y="827.1328125">apple</node>
+    <node x="632.0" y="641.1328125">groovyjarjarasm</node>
+    <node x="385.5" y="360.0">MainTest</node>
+    <node x="724.0" y="827.1328125">java</node>
+    <node x="362.0" y="827.1328125">javax</node>
+    <node x="30.0" y="641.1328125">groovyjarjarpicocli</node>
+    <node x="410.0" y="752.1328125">images</node>
+    <node x="543.0" y="827.1328125">junit</node>
+    <node x="330.0" y="902.1328125">org</node>
+    <node x="505.5" y="80.0">MotionistSvømmer</node>
+    <node x="247.33333333333331" y="80.0">KonkurrenceSvømmer</node>
+    <node x="277.5" y="360.0">Klub</node>
+    <node x="430.5" y="170.0">FileHandler</node>
+    <node x="495.0" y="902.1328125">jdk</node>
+    <node x="205.0" y="752.1328125">META-INF</node>
+    <node x="599.0" y="752.1328125">groovy</node>
+    <node x="205.5" y="280.0">DisplayMenu</node>
+    <node x="222.5" y="170.0">DisciplineSorter</node>
+    <node x="40.0" y="520.1328125">groovyjarjarcommonscli</node>
+    <node x="397.0" y="520.1328125">groovyjarjarantlr</node>
+    <node x="467.75" y="440.0">Main</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="FileHandler" target="MotionistSvømmer">
+      <point x="34.0" y="-15.0" />
+      <point x="532.5" y="150.0" />
+      <point x="527.5" y="150.0" />
+      <point x="-66.0" y="15.0" />
+    </edge>
+    <edge source="MedlemsListe" target="MotionistSvømmer">
+      <point x="64.80000000000001" y="-15.0" />
+      <point x="507.05" y="260.0" />
+      <point x="626.75" y="260.0" />
+      <point x="626.75" y="150.0" />
+      <point x="659.5" y="150.0" />
+      <point x="66.0" y="15.0" />
+    </edge>
+    <edge source="DisciplineSorter" target="KonkurrenceSvømmer">
+      <point x="0.0" y="-15.0" />
+      <point x="310.5" y="150.0" />
+      <point x="327.3333333333333" y="150.0" />
+      <point x="-16.0" y="15.0" />
+    </edge>
+    <edge source="MedlemsListe" target="DisciplineSorter">
+      <point x="-36.00000000000003" y="-15.0" />
+      <point x="406.24999999999994" y="240.0" />
+      <point x="310.5" y="240.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="groovyjarjarantlr" target="groovyjarjarantlr">
+      <point x="77.33333333333331" y="15.0" />
+      <point x="590.3333333333333" y="590.1328125" />
+      <point x="357.0" y="590.1328125" />
+      <point x="357.0" y="525.1328125" />
+      <point x="-116.0" y="-10.0" />
+    </edge>
+    <edge source="Klub" target="MedlemsListe">
+      <point x="10.0" y="-15.0" />
+      <point x="327.5" y="330.0" />
+      <point x="382.25" y="330.0" />
+      <point x="-60.0" y="15.0" />
+    </edge>
+    <edge source="KonkurrenceSvømmer" target="Medlem">
+      <point x="0.0" y="-15.0" />
+      <point x="343.3333333333333" y="55.0" />
+      <point x="478.50000000000006" y="55.0" />
+      <point x="-24.0" y="15.0" />
+    </edge>
+    <edge source="MotionistSvømmer" target="Medlem">
+      <point x="0.0" y="-15.0" />
+      <point x="593.5" y="55.0" />
+      <point x="526.5" y="55.0" />
+      <point x="24.0" y="15.0" />
+    </edge>
+    <edge source="groovyjarjarpicocli" target="groovyjarjarpicocli">
+      <point x="62.0" y="15.0" />
+      <point x="216.0" y="701.1328125" />
+      <point x="0.0" y="701.1328125" />
+      <point x="0.0" y="648.6328125" />
+      <point x="-124.0" y="-7.5" />
+    </edge>
+    <edge source="MedlemsListe" target="KonkurrenceSvømmer">
+      <point x="-64.80000000000004" y="-15.0" />
+      <point x="377.44999999999993" y="260.0" />
+      <point x="0.0" y="260.0" />
+      <point x="0.0" y="140.0" />
+      <point x="263.3333333333333" y="140.0" />
+      <point x="-80.0" y="15.0" />
+    </edge>
+    <edge source="FileHandler" target="KonkurrenceSvømmer">
+      <point x="-34.0" y="-15.0" />
+      <point x="464.5" y="130.0" />
+      <point x="423.3333333333333" y="130.0" />
+      <point x="80.0" y="15.0" />
+    </edge>
+    <edge source="MedlemsListe" target="PersonalBestSorter">
+      <point x="-50.400000000000034" y="-15.0" />
+      <point x="391.84999999999997" y="250.0" />
+      <point x="106.5" y="250.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="groovyjarjarcommonscli" target="groovyjarjarcommonscli">
+      <point x="90.66666666666669" y="15.0" />
+      <point x="266.6666666666667" y="590.1328125" />
+      <point x="0.0" y="590.1328125" />
+      <point x="0.0" y="525.1328125" />
+      <point x="-136.0" y="-10.0" />
+    </edge>
+    <edge source="Klub" target="DisplayMenu">
+      <point x="-30.0" y="-15.0" />
+      <point x="287.5" y="340.0" />
+      <point x="239.5" y="340.0" />
+      <point x="-34.0" y="15.0" />
+    </edge>
+    <edge source="Main" target="Klub">
+      <point x="-26.666666666666686" y="-15.0" />
+      <point x="481.08333333333326" y="415.0" />
+      <point x="317.5" y="415.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="Main" target="MedlemsListe">
+      <point x="26.666666666666686" y="-15.0" />
+      <point x="534.4166666666666" y="415.0" />
+      <point x="519.0" y="415.0" />
+      <point x="519.0" y="330.0" />
+      <point x="502.25" y="330.0" />
+      <point x="60.0" y="15.0" />
+    </edge>
+    <edge source="MedlemsListe" target="FileHandler">
+      <point x="7.199999999999989" y="-15.0" />
+      <point x="449.45" y="220.0" />
+      <point x="464.5" y="220.0" />
+      <point x="-34.0" y="15.0" />
+    </edge>
+    <edge source="MainTest" target="MedlemsListe">
+      <point x="-28.0" y="-15.0" />
+      <point x="413.5" y="340.0" />
+      <point x="430.25" y="340.0" />
+      <point x="-12.0" y="15.0" />
+    </edge>
+    <edge source="PersonalBestSorter" target="KonkurrenceSvømmer">
+      <point x="0.0" y="-15.0" />
+      <point x="106.5" y="150.0" />
+      <point x="295.3333333333333" y="150.0" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8430225736945582" x="791.5873388124091" y="340.52257038522845" />
+  <SelectedNodes>
+    <node>com</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
