@@ -1,5 +1,7 @@
 import java.util.Comparator;
-
+/**
+ * @Mads
+ */
 public class DisciplineSorter implements Comparator<KonkurrenceSvømmer> {
 
     @Override

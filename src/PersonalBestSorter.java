@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Comparator;
-
+/**
+ * @Mads
+ */
 public class PersonalBestSorter implements Comparator<KonkurrenceSvømmer> {
 
 
