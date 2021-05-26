@@ -1,7 +1,9 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-
+/**
+ * @Mads
+ */
 public class Klub {
     MedlemsListe medlemsListe = new MedlemsListe();
     private static Klub klub = new Klub();

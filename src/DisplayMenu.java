@@ -1,5 +1,8 @@
 import java.util.Scanner;
-
+/**
+ * @Nikolaj
+ * @Mads
+ */
 public class DisplayMenu {
   private String menuHeader;
   private String leadText;
