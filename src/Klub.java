@@ -3,6 +3,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 /**
  * @Mads
+ * @Nikolaj
  */
 public class Klub {
     MedlemsListe medlemsListe = new MedlemsListe();
@@ -14,7 +15,6 @@ public class Klub {
     /**public Klub(MedlemsListe medlemsListe){
         this.medlemsListe = medlemsListe;
     }*/
-
 
     void run(){
         DisplayMenu displayMenu =
